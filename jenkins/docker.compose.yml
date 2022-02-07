@@ -1,0 +1,18 @@
+version: '3'
+services:
+  jenkins:
+    image: jenkins/jenkins
+    ports:
+     #maquina/contenedor
+     - 8080:8080
+     - 50000:50000
+    container_name: jenkins
+    volumes:
+     #Establecer los volumenes de jenkins en la carpeta actual jenkins_home
+     - $PWD/jenkins_home:/var/jenkins_home
+    networks:
+     - net
+networks:
+  #Establecemos la red a utilizar mas adelante
+  net:
+
